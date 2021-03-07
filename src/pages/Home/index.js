@@ -54,7 +54,12 @@ function Home() {
                 layout: { width, height },
               },
             }) => setYouBusinessDimensions({ width, height })}
-            style={styles.businessAnalyticsChart}
+            style={[
+              styles.businessAnalyticsChart,
+              youBusinessDimensions
+                ? styles.businessAnalyticsChartWithData
+                : styles.businessAnalyticsChartWithoutData,
+            ]}
           >
             <CustomBarChart
               chartData={yourBusinessData}
