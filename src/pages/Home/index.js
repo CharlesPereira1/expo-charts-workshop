@@ -6,6 +6,9 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 
 import { AntDesign } from '@expo/vector-icons';
 
+import CustomBarChart from '../../components/CustomBarCode';
+import { yourBusinessData } from '../../helpers/charData';
+
 import styles from './styles';
 
 function Home() {
@@ -41,7 +44,12 @@ function Home() {
               </Text>
             </View>
           </View>
-          <View style={styles.businessAnalyticsChart} />
+          <View
+            onLayout={{ nativeEvent: { layout: { width, height } } }}
+            style={styles.businessAnalyticsChart}
+          >
+            <CustomBarChart chartData={yourBusinessData} />
+          </View>
         </View>
         <View style={styles.businessAnalyticsContainer}>
           <View style={styles.businessAnalyticsData}>
