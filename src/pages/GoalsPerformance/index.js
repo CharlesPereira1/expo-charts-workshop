@@ -12,28 +12,29 @@ function GoalsPerformance() {
     <View style={styles.container}>
       <View style={styles.goalsContainer}>
         <Text style={styles.goalsTitle}>Desepenho das Metas</Text>
-        <View style={styles.goalsChart}>
         <View
-            onLayout={({
-              nativeEvent: {
-                layout: { width, height },
-              },
-            }) => setGoalsDimensions({ width, height })}
-            style={[
-              styles.goalsChart,
-              goalsDimensions
-                ? styles.goalsChartWithData
-                : styles.goalsChartWithoutData,
-            ]}
-          >
-            <CustomBarChart
-              chartData={yourBusinessData}
-              chartDimensions={yourBusinessData}
-            />
+          onLayout={({
+            nativeEvent: {
+              layout: { width, height },
+            },
+          }) => setGoalsDimensions({ width, height })}
+          style={[
+            styles.goalsChart,
+            goalsDimensions
+              ? styles.goalsChartWithData
+              : styles.goalsChartWithoutData,
+          ]}
+        >
           <CustomProgressChart
             chartData={0.75}
             chartDimensions={goalsDimensions}
           />
+          {goalsDimensions && (
+            <View style={styles.golasChartContainer}>
+              <Text style={styles.goalsChartTitle}>75%</Text>
+              <Text style={styles.goalsChartSubTitle}>R$ 1050 / semana</Text>
+            </View>
+          )}
         </View>
 
         <View style={styles.goalsDetailsContainer}>

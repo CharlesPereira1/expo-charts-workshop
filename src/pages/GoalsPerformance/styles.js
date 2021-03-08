@@ -34,6 +34,20 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'center',
   },
+  golasChartContainer: {
+    position: 'absolute',
+    alignItems: 'center',
+  },
+  goalsChartTitle: {
+    // textAlign: 'center',
+    fontSize: 75,
+    fontWeight: 'bold',
+    color: '#2B2B73',
+  },
+  goalsChartSubTitle: {
+    fontSize: 18,
+    color: '#2B2B73',
+  },
   goalsDetailsContainer: {
     backgroundColor: '#F5F6FB',
     borderRadius: 8,
