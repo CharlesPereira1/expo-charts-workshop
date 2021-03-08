@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { View, Text } from 'react-native';
+import CustomProgressChart from '../../components/CustomProgressChart';
 
 import styles from './styles';
 
 function GoalsPerformance() {
+  const [goalsDimensions, setGoalsDimensions] = useState(null);
+
   return (
     <View style={styles.container}>
       <View style={styles.goalsContainer}>
         <Text style={styles.goalsTitle}>Desepenho das Metas</Text>
-        <View style={styles.goalsChart} />
+        <View style={styles.goalsChart}>
+        <View
+            onLayout={({
+              nativeEvent: {
+                layout: { width, height },
+              },
+            }) => setGoalsDimensions({ width, height })}
+            style={[
+              styles.goalsChart,
+              goalsDimensions
+                ? styles.goalsChartWithData
+                : styles.goalsChartWithoutData,
+            ]}
+          >
+            <CustomBarChart
+              chartData={yourBusinessData}
+              chartDimensions={yourBusinessData}
+            />
+          <CustomProgressChart
+            chartData={0.75}
+            chartDimensions={goalsDimensions}
+          />
+        </View>
+
         <View style={styles.goalsDetailsContainer}>
           <View style={styles.thisMonthGoalsContainer}>
             <Text style={styles.thisMonthGoalsTitle}>Esse mês</Text>
