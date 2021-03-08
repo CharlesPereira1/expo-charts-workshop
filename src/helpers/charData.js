@@ -16,6 +16,7 @@ export const yourBusinessData = [
     svg: { fill: 'rgba(175,220,139,0.7)' },
   },
 ];
+
 export const yourCompetitorData = [
   {
     value: 3.75,
@@ -35,3 +36,5 @@ export const yourCompetitorData = [
     svg: { fill: 'rgba(175,220,139,0.7)' },
   },
 ];
+
+export const productReportData = [150, 450, 50, 800, 500, 650, 350];
